@@ -37,8 +37,9 @@ class Trie {
   }
 
   /**
-   * 
+   * 在前缀树中搜索指定的前缀
    * @param {string} word 待搜索的键
+   * @return {null || TrieNode}
    */
   searchPrefix(word) {
     let currentNode = this.root;
@@ -63,6 +64,7 @@ class Trie {
   search(word) {
     const node = this.searchPrefix(word);
 
+    // 当searchPrefix函数的返回值是代表结束的TrieNode时，表示查找到了完整的键
     return (node !== null) && node.isEndNode();
   }
 
