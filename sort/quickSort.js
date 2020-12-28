@@ -1,6 +1,10 @@
 /**
  * 快速排序
  * 非递归实现
+ * @param {array} arr 待排序数组
+ * @param {number} startIndex 起始下标
+ * @param {number} endIndex 结束下标
+ * @returns {array}
  */
 function quickSort(arr, startIndex, endIndex) {
   const quickSortStack = [];
