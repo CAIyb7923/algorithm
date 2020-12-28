@@ -1,6 +1,7 @@
 /**
  * 冒泡排序
  * @param {array} array 待排序数组
+ * @returns {array}
  */
 function bubbleSort(array) {
   // 无序数组的边界，每次比较只需要比到这里
@@ -12,9 +13,11 @@ function bubbleSort(array) {
   for (let i = 0; i < array.length - 1; i++) {
     // 有序标记，每一轮的初始值设为true
     let isSorted = true;
+
     for (let j = 0; j < sortBorder; j++) {
       if (array[j] > array[j + 1]) {
         [array[j + 1], array[j]] = [array[j], array[j + 1]];
+        
         // 存在元素交换,所以不是有序的
         isSorted = false;
 
