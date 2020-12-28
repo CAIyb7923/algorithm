@@ -54,17 +54,24 @@ function quickSort(arr, startIndex, endIndex) {
 function partition(arr, startIndex, endIndex) {
   // 取第一个元素作为基准元素
   const pivot = arr[startIndex];
+
+  // 代表小于基准元素的区域边界
   let mark = startIndex;
 
   for (let i = (startIndex + 1); i <= endIndex; i++) {
+    // 如果当前元素小于基准元素
     if (arr[i] < pivot) {
+      // 边界向右扩展
       mark ++;
+      // 将当前元素交换到小于基准元素的区域中
       [arr[mark], arr[i]] = [arr[i], arr[mark]];
     }
   }
 
-  arr[startIndex] = arr[mark];
-  arr[mark] = pivot;
+  /* arr[startIndex] = arr[mark];
+  arr[mark] = pivot; */
+  [arr[startIndex], arr[mark]] = [arr[mark], arr[startIndex]];
 
+  // 返回排序完成后基准元素的最新位置
   return mark;
 }
